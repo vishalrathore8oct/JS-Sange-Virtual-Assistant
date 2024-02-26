@@ -34,12 +34,18 @@ stopBtn.addEventListener("click", () => {
 
 function readOut(massege) {
     const speech = new SpeechSynthesisUtterance()
+    // const allVoices = speechSynthesis.getVoices()
+    // speech.voice = allVoices[10]
     speech.text = massege
     speech.volume = 1
+    // speech.lang = "en-US";
+    speech.lang = "hi-IN";
     window.speechSynthesis.speak(speech)
     console.log("Speaking Out");
 }
 
 speakOutBtn.addEventListener("click", () => {
-    readOut("Hello Mr. Vishal Rathore, How are you.")
+    readOut("hello namaste aap kesse ho.")
+    // readOut("Hi mister sange you are the best I have ever seen, the most handsome and intelligent.")
+    // readOut("Hello mister Vishal Rathore, How are you. and you are better than above on sange")
 })
