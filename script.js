@@ -1,5 +1,6 @@
 const startBtn = document.querySelector("#start")
 const stopBtn = document.querySelector("#stop")
+const speakOutBtn = document.querySelector("#speak-out")
 
 // Speech Recoginition Set up
 
@@ -29,3 +30,16 @@ stopBtn.addEventListener("click", () => {
     recognition.stop()
 })
 
+// for Sange Virtual Assistant speech
+
+function readOut(massege) {
+    const speech = new SpeechSynthesisUtterance()
+    speech.text = massege
+    speech.volume = 1
+    window.speechSynthesis.speak(speech)
+    console.log("Speaking Out");
+}
+
+speakOutBtn.addEventListener("click", () => {
+    readOut("Hello Mr. Vishal Rathore, How are you.")
+})
